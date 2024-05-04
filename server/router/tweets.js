@@ -9,7 +9,7 @@ const { getAll, getId, add, remove, update } = require('../controller/tweet');
 //Contract Testing: Client-Server => 추가 공부 필요
 //Proto-base => 추가 공부 필요
 
-const validateTwet = [
+const validateTweet = [
   body('text')
     .trim()
     .isLength({ min: 3 })
@@ -20,8 +20,8 @@ const validateTwet = [
 //router
 router.get('/', getAll);
 router.get('/:id', getId);
-router.post('/', validateTwet, add);
+router.post('/', validateTweet, add);
 router.delete('/:id', remove);
-router.put('/:id', validateTwet, update);
+router.put('/:id', validateTweet, update);
 
 module.exports = router;
